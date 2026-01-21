@@ -15,6 +15,31 @@ capital = 10000.0
 tasa = 0.05
 tiempo = 2
 
+## Resolución aquí ##
+# Formula interes = capital * tasa * tiempo
+interes = capital * tasa * tiempo
+total_final = capital + interes
+
+# AHORA ANTES DE NADA SE REALIZARA EL MISMO EJEMPLO PERO CON INPUTS
+def validate_float_value(prop):
+    while True:
+        try:
+            value = float(input("Ingrese el valor de su " + prop + ":"))
+            return value
+        except ValueError:
+            print("Valor invaido. Intente nuevamente.")
+            
+
+input_capital = validate_float_value("capital")
+input_tasa = validate_float_value("tasa de interes")
+input_tiempo = validate_float_value("tiempo")
+    
+print("Iniciado calculo de interes simple con los valores asignados:")
+interes_input = input_capital * input_tasa * input_tiempo
+total_final_input = input_capital + interes_input
+    
+print("El valor final del capital contando el interes es de: " + str(total_final_input))
+
 
 # ============================================
 # EJERCICIO 2 - SUPER BÁSICO
@@ -26,6 +51,30 @@ tiempo = 2
 
 saldo_actual = 5000.0
 
+## Resolución aquí ##
+monto = 1500.0
+nuevo_saldo = saldo_actual + monto
+
+# Aquí se imprimria con print("El saldo anterior es: ", saldo_actual)
+# Aquí se imprimria con print("El monto depositado es: ", monto)
+# Aquí se imprimria con print("El nuevo saldo es: ", nuevo_saldo)
+
+# AHORA ANTES DE NADA SE REALIZARA EL MISMO EJEMPLO PERO CON INPUTS y con una nueva función no se debe usar la de arriba.
+def validate_double_value(mensaje):
+    while True:
+        try:
+            value = float(input(mensaje))
+            return value
+        except ValueError:
+            print("Valor invaido. Intente nuevamente.")
+
+input_saldo_actual = validate_double_value("Ingrese el saldo actual de su cuenta:")
+input_monto = validate_double_value("Ingrese el monto a depositar:")
+nuevo_saldo_input = input_saldo_actual + input_monto
+
+print("El saldo anterior es: " + str(input_saldo_actual))
+print("El monto depositado es: " + str(input_monto))
+print("El nuevo saldo es: " + str(nuevo_saldo_input))
 
 # ============================================
 # EJERCICIO 3 - SUPER BÁSICO
