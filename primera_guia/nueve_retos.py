@@ -33,16 +33,22 @@ print(f"En total, tienen {total_manzanas} manzanas")
 ## Ejercicio 6
 ### JUAN PABLO FLORES DÍAZ
 print("EJERCICIO 6")
-def validate_number(mensaje):
+def validate_number(mensaje, value_min=None, value_max=None):
     while True:
         try:
             number = float(input(mensaje))
-            return number
+            if value_min is not None and number <= value_min:
+                print(f"El número debe ser mayor o igual a {value_min}. Inténtalo de nuevo.")
+                continue
+            if value_max is not None and number >= value_max:
+                print(f"El número debe ser menor o igual a {value_max}. Inténtalo de nuevo.")
+                continue
+            else: return number
         except ValueError:
             print("Entrada inválida. Inténtalo de nuevo.")
 
-num1 = validate_number("Ingresa el primer número: ")
-num2 = validate_number("Ingresa el segundo número: ")
+num1 = validate_number("Ingresa el primer número: ", value_min=0)
+num2 = validate_number("Ingresa el segundo número: ", value_min=0)
 
 print(f"La suma de {num1} y {num2} es {num1 + num2}\n"
       f"La resta de {num1} y {num2} es {num1 - num2}\n"
