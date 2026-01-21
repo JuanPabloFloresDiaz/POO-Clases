@@ -124,6 +124,42 @@ else:
 saldo_inicial = 1000.0
 movimientos = [500, -200, 300, -150, 1000]
 
+## Resolución aquí ##
+
+## Siempre se hace el ejercicio luego con inputs y sin reciclar funciones, porque se supone que es un nuevo ejercicio.
+
+movimientos_input = []
+
+def validate_numeric_value(mensaje, type_cast):
+    while True:
+        if type_cast == 'int':
+            try:
+                value = int(input(mensaje))
+                return value
+            except ValueError:
+                print("Valor invaido. Intente nuevamente.")
+        while type_cast == 'float':
+            try:
+                value = float(input(mensaje))
+                return value
+            except ValueError:
+                print("Valor invaido. Intente nuevamente.")
+        else:
+            print("Tipo de dato no soportado. Use 'int' o 'float'.")
+            return None
+            
+input_movimientos_veces = validate_numeric_value("Ingrese la cantidad de movimientos a registrar:", 'int')
+for i in range(input_movimientos_veces):
+    movimiento = validate_numeric_value("Ingrese el valor del movimiento (positivo para depósito, negativo para retiro):", 'float')
+    movimientos_input.append(movimiento)
+
+input_saldo_inicial = validate_numeric_value("Ingrese el saldo inicial de su cuenta:", 'float')
+saldo_final = input_saldo_inicial
+for movimiento in movimientos_input:
+    saldo_final += movimiento
+    print("Movimiento: " + str(movimiento) + ", Saldo actual: " + str(saldo_final))
+
+print("Saldo final de la cuenta: " + str(saldo_final))
 
 # ============================================
 # EJERCICIO 5 - NIVEL INTERMEDIO
