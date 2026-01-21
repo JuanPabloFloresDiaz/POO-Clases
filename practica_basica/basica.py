@@ -86,6 +86,33 @@ print("El nuevo saldo es: " + str(nuevo_saldo_input))
 
 saldo_cuenta = 3000.0
 
+## Resolución aquí ##
+
+monto_retiro = 3500.0
+if monto_retiro <= saldo_cuenta:
+    nuevo_saldo_cuenta = saldo_cuenta - monto_retiro
+    # Aquí se imprimiria con print("Retiro exitoso. Nuevo saldo: ", nuevo_saldo_cuenta)
+else:
+    # Aquí se imprimiria con print("Saldo insuficiente para realizar el retiro.")
+    pass
+## Siempre se hace el ejercicio luego con inputs y sin reciclar funciones, porque se supone que es un nuevo ejercicio.
+
+def validate_money_value(mensaje):
+    while True:
+        try:
+            value = float(input(mensaje))
+            return value
+        except ValueError:
+            print("Valor invaido. Intente nuevamente.")
+            
+input_saldo_cuenta = validate_money_value("Ingrese el saldo actual de su cuenta:")
+input_monto_retiro = validate_money_value("Ingrese el monto a retirar:")
+
+if input_monto_retiro <= input_saldo_cuenta:
+    nuevo_saldo_cuenta = input_saldo_cuenta - input_monto_retiro
+    print("Retiro exitoso. el nuevo saldo es: " + str(nuevo_saldo_cuenta))
+else:
+    print("Saldo insuficiente para realizar el retiro.")
 
 # ============================================
 # EJERCICIO 4 - SUPER BÁSICO
