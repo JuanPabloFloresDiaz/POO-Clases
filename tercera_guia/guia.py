@@ -243,7 +243,7 @@ print(f"Cantidad de días en la tupla: {len(dias_semana)}") """
 # Calcule el promedio y Retorne el resultado
 # Después, llamar a la función y mostrar el promedio en pantalla
 ### JUAN PABLO FLORES DÍAZ
-print("EJERCICIO 8")
+""" print("EJERCICIO 8")
 def validar_numero(mensaje):
     while True:
         try:
@@ -260,4 +260,4 @@ numero2 = validar_numero("Ingresa el segundo número: ")
 numero3 = validar_numero("Ingresa el tercer número: ")
 
 promedio = calcular_promedio(numero1, numero2, numero3)
-print(f"El promedio de {numero1}, {numero2} y {numero3} es: {promedio:.2f}")
+print(f"El promedio de {numero1}, {numero2} y {numero3} es: {promedio:.2f}") """
